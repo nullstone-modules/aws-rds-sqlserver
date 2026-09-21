@@ -27,6 +27,7 @@ resource "aws_db_instance" "this" {
 
   backup_retention_period = var.backup_retention_period
   backup_window           = "02:00-03:00"
+  copy_tags_to_snapshot   = true
 
   lifecycle {
     ignore_changes = [username, final_snapshot_identifier]
